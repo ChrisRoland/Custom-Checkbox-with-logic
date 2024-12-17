@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Mali:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #d3e5f6;
+    font-family: "Mali", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+  
+.toggle-container {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    width: 200px;
+}
+
+.toggle {
+    visibility: hidden;
+}
+
+label {
+    background-color: #d0d0d0a0;
+    border: 2px solid #fff;
+    border-radius: 50px;
+    position: relative;
+    display: inline-block;
+    margin: 0 15px 0;
+    width: 83px;
+    height: 42px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px #00000072;
+}
+
+.toggle:checked + label {
+    background-color: #2288e7;
+}
+
+.ball {
+    background: #fff;
+    height: 34px;
+    width: 34px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0.14rem;
+    left: 3px;
+    align-items: center;
+    justify-content: center;
+    animation: off 0.3s linear forwards;
+}
+
+.toggle:checked + label .ball {
+    animation: on 0.3s linear forwards;
+}
+
+@keyframes on {
+    0% {
+        transform: translateX(0) scale(1);
+    }
+    50% {
+        transform: translateX(20px) scale(1.2);
+    }
+    100% {
+        transform: translateX(40px) scale(1);
+    }
+}
+
+@keyframes off {
+    0% {
+        transform: translateX(40px) scale(1);
+    }
+    50% {
+        transform: translateX(20px) scale(1.2);
+    }
+    100% {
+        transform: translateX(0) scale(1);
+    }
+}
