@@ -42,6 +42,10 @@ label {
     box-shadow: 0 2px 4px #00000072;
 }
 
+label:hover {
+    transform: scale(1.05);
+}
+
 .toggle:checked + label {
     background-color: #2288e7;
 }
